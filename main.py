@@ -1,35 +1,31 @@
-import pygame as pg
+import pygame
+
+pygame.init()
+clock = pygame.time.Clock()
+screen = pygame.display.set_mode((800, 600))
 
 
-def main():
-    screen = pg.display.set_mode((800, 600))
-    font = pg.font.Font(None, 32)
-    clock = pg.time.Clock()
-    color = pg.Color('dodgerblue2')
-    text = ''
+font = pg.font.Font(None, 32)
+color = (0, 0, 0)
+text = ''
 
-    while True:
-        for event in pg.event.get():
-            if event.type == pg.QUIT:
-                return
-            elif event.type == pg.KEYDOWN:
-                if event.key == pg.K_RETURN:
-                    print(text)
-                    text = ''
-                elif event.key == pg.K_BACKSPACE:
-                    text = text[:-1]
-                else:
-                    text += event.unicode
+done = False
+while not done:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            done = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN:
+                print(text)
+                text = ''
+            elif event.key == pygame.K_BACKSPACE:
+                text = text[:-1]
+            else:
+                text += event.unicode
 
-        screen.fill((255, 255, 255))
-        txt_surface = font.render(text, True, color)
-        screen.blit(txt_surface, (50, 100))
+    screen.fill((255, 255, 255))
+    txt_surface = font.render(text, True, color)
+    screen.blit(txt_surface, (50, 100))
 
-        pg.display.flip()
-        clock.tick(30)
-
-
-if __name__ == '__main__':
-    pg.init()
-    main()
-    pg.quit()
+    pygame.display.flip()
+    clock.tick(30)
