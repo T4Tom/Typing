@@ -2,7 +2,7 @@ import pygame as pg
 
 
 def main():
-    screen = pg.display.set_mode((640, 480))
+    screen = pg.display.set_mode((800, 600))
     font = pg.font.Font(None, 32)
     clock = pg.time.Clock()
     color = pg.Color('dodgerblue2')
@@ -21,7 +21,7 @@ def main():
                 else:
                     text += event.unicode
 
-        screen.fill((30, 30, 30))
+        screen.fill((255, 255, 255))
         txt_surface = font.render(text, True, color)
         screen.blit(txt_surface, (50, 100))
 
