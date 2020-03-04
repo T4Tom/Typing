@@ -5,7 +5,7 @@ clock = pygame.time.Clock()
 screen = pygame.display.set_mode((800, 600))
 
 
-font = pg.font.Font(None, 32)
+font = pygame.font.Font(None, 32)
 color = (0, 0, 0)
 text = ''
 
