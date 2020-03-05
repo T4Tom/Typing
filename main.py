@@ -29,3 +29,5 @@ while not done:
 
     pygame.display.flip()
     clock.tick(30)
+
+exit()
