@@ -11,21 +11,21 @@ text = ''
 
 done = False
 while not done:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            exit()
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RETURN:
-                print(text)
-                text = ''
-            elif event.key == pygame.K_BACKSPACE:
-                text = text[:-1]
-            else:
-                text += event.unicode
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      exit()
+    elif event.type == pygame.KEYDOWN:
+      if event.key == pygame.K_RETURN:
+        print(text)
+        text = ''
+      elif event.key == pygame.K_BACKSPACE:
+        text = text[:-1]
+      else:
+        text += event.unicode
 
-    screen.fill((255, 255, 255))
-    txt_surface = font.render(text, True, color)
-    screen.blit(txt_surface, (50, 100))
+  screen.fill((255, 255, 255))
+  txt_surface = font.render(text, True, color)
+  screen.blit(txt_surface, (50, 100))
 
-    pygame.display.flip()
-    clock.tick(30)
+  pygame.display.flip()
+  clock.tick(30)
