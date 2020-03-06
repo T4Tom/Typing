@@ -19,7 +19,8 @@ while not done:
         print(text)
         text = ''
       elif event.key == pygame.K_BACKSPACE:
-        text = text[:-1]
+        while True:
+          text = text[:-1]
       else:
         text += event.unicode
 
