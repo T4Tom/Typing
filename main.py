@@ -13,7 +13,7 @@ done = False
 while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            done = False
+            exit()
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
                 print(text)
@@ -29,5 +29,3 @@ while not done:
 
     pygame.display.flip()
     clock.tick(30)
-
-exit()
